@@ -3,7 +3,7 @@ import { PatientHeader } from "@/components/PatientHeader"
 import { GENDERS } from "@/utils/constants"
 
 async function getPatientData() {
-  const res = await fetch(process.env.API_URL)
+  const res = await fetch(process.env.API_URL, { cache: 'no-cache' })
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
